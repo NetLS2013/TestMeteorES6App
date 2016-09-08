@@ -1,0 +1,43 @@
+<template name="post">
+  <li class="post-row">
+      <div class="panel panel-default">
+          {{#if isOwner owner}}
+          <div class="post-manage-block" post="{{_id}}">
+            <span class="delete-post glyphicon glyphicon-remove link"></span>
+          </div>
+          {{/if}}
+          <div class="panel-body">
+              <div class="title">
+                  {{title}}
+              </div>{{#if private}}<span class="posts-set-public link" post="{{_id}}">Set Public</span>{{/if}}<br>
+              <div class="post-content col-xs-12">
+                  <pre class="pre-clear">{{content}}</pre>
+              </div>
+          </div>
+          <div class="panel-footer">
+              <div class="post-date col-xs-12 col-md-6">
+                  Posted: {{dateFormat date}}
+              </div>
+              <div class="owner col-xs-12 col-md-6 align-right">
+                  by {{getUserName owner}}
+              </div>
+              <hr>
+              <div class="post-votes">
+                  <p>Votes: <span class="badge {{countColorClass votesCount}}">{{votesCount}}</span>
+                      {{#if isAuthorized}}
+                      <span class="post-vote-controll" post-id="{{_id}}"> <span class="link vote-like"><span class="glyphicon glyphicon-arrow-up"></span></span><span class="link vote-dislike"><span class="glyphicon glyphicon-arrow-down"></span></span> </span>
+                      {{/if}}
+                  </p>
+              </div>
+              <div class="post-comments">
+                  <div class="comments-link">
+                    <a class="link">Comments <span class="badge"> {{comments.count}}</span></a>
+                  </div>
+                  <div class="comments-template hidden">
+                    {{> comments}}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </li>
+</template>

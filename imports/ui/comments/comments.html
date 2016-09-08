@@ -1,0 +1,15 @@
+<template name="comments">
+    <ul class="list-group">
+        {{#each comments}}
+            {{> comment}}
+        {{/each}}
+    </ul>
+    {{#if isAuthorized}}
+    <div class="addCommentBlock">
+        <form id="addComment">
+            <small>Ctrl + Enter - new line, Enter - send comment</small>
+            <textarea maxlength="500" post="{{_id}}" autocomplete="off" rows="3" class="comment-text form-control" placeholder="Comment.." ></textarea>
+        </form>
+    </div>
+    {{/if}}
+</template>

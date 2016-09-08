@@ -1,0 +1,8 @@
+<template name="comment">
+    <li class="list-group-item">
+        <pre>{{content}} {{#if isOwner owner}}
+            <span comment="{{_id}}" class="comment-delete link glyphicon glyphicon-remove"></span>
+        {{/if}}</pre>
+    <small>by {{getUserName owner}}</small> at {{dateTimeFormat date}}
+    </li>
+</template>

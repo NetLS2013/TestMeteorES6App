@@ -1,0 +1,27 @@
+<template name="addPostModal">
+    <div class="modal fade" id="addPostModal">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">New post</h4>
+                </div>
+
+                <div class="modal-body">
+                    <label for="name">Title</label>
+                    <input type="text" id="post-title" class="form-control" placeholder="Title..." />
+                    <label for="name">Content</label>
+                    <textarea type="text" id="post-content" class="form-control" placeholder="Content..."></textarea>
+                    <label for="name">Private</label>
+                    <input type="checkbox" id="post-private">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addPostModal-add">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

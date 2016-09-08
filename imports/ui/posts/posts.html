@@ -1,0 +1,10 @@
+<template name="posts">
+    <div><h1>Posts <span class="badge"> {{postsCount}} </span> {{#if isAuthorized}}{{#if Oles}}<button id="addPost" class="btn btn-primary">Add post</button>{{/if}}{{/if}}</h1></div>
+    {{> addPostModal}}
+        <ul class="list-group posts-list">
+            {{#each posts}}
+                {{> post}}
+            {{/each}}
+        </ul>
+    {{#if showLoadMoreButton}}<div class="load-more-block posts-loadMore link"><h1><span>↓ Load more ↓</span></h1></div>{{/if}}
+</template>

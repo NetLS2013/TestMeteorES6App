@@ -1,0 +1,14 @@
+<template name="profile">
+    <h2>User profile</h2>
+    <img src="{{gravatarUrl}}" alt="gravatar" />
+    <h3>User name: {{userInfo.profile.userName}}</h3>
+    <h3>First name: {{userInfo.profile.firstName}}</h3>
+    <h3>Last name: {{userInfo.profile.lastName}}</h3>
+    <h3>Emails:</h3>
+    {{#each userInfo.emails}}
+        {{> profileEmail}}
+    {{/each}}
+</template>
+<template name="profileEmail">
+    <h3> - {{address}}</h3>
+</template>
